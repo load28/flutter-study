@@ -39,26 +39,21 @@ class MainPageBodyState extends State<MainPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: 320,
-          child: PageView.builder(
+        _sliceList(),
+        _dotIndicator(),
+      ],
+    );
+  }
+
+  Widget _sliceList() {
+    return Container(
+      height: 320,
+      child: PageView.builder(
           controller: _pageController,
           itemCount: 5,
           itemBuilder: (context, position){
             return _buildPageItem(position);
           }),
-        ),
-        new DotsIndicator(
-          dotsCount: 5,
-          position: _currentPageValue,
-          decorator: DotsDecorator(
-            size: const Size.square(9.0),
-            activeSize: const Size(18.0, 9.0),
-            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-            activeColor: AppColors.mainColor,
-          ),
-        )
-      ],
     );
   }
 
@@ -170,6 +165,19 @@ class MainPageBodyState extends State<MainPageBody> {
             ),
           )
         ],
+      ),
+    );
+  }
+
+  Widget _dotIndicator() {
+    return new DotsIndicator(
+      dotsCount: 5,
+      position: _currentPageValue,
+      decorator: DotsDecorator(
+        size: const Size.square(9.0),
+        activeSize: const Size(18.0, 9.0),
+        activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+        activeColor: AppColors.mainColor,
       ),
     );
   }
