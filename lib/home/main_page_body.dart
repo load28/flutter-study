@@ -42,9 +42,9 @@ class MainPageBodyState extends State<MainPageBody> {
         Container(
           height: 320,
           child: PageView.builder(
-              controller: _pageController,
-              itemCount: 5,
-              itemBuilder: (context, position){
+          controller: _pageController,
+          itemCount: 5,
+          itemBuilder: (context, position){
             return _buildPageItem(position);
           }),
         ),
@@ -131,17 +131,17 @@ class MainPageBodyState extends State<MainPageBody> {
                     BigText(text: "Chinese Side"),
                     SizedBox(height: 10,),
                     Row(
-                        children: [
-                          Wrap(
-                            children: List.generate(5, (index) {return Icon(Icons.star, color: AppColors.mainColor, size: 15);}),
-                          ),
-                          SizedBox(width: 10,),
-                          SmallText(text: "4.5"),
-                          SizedBox(width: 10,),
-                          SmallText(text: "1222"),
-                          SizedBox(width: 5,),
-                          SmallText(text: "comments"),
-                        ]
+                      children: [
+                        Wrap(
+                          children: List.generate(5, (index) {return Icon(Icons.star, color: AppColors.mainColor, size: 15);}),
+                        ),
+                        SizedBox(width: 10,),
+                        SmallText(text: "4.5"),
+                        SizedBox(width: 10,),
+                        SmallText(text: "1222"),
+                        SizedBox(width: 5,),
+                        SmallText(text: "comments"),
+                      ]
                     ),
                     SizedBox(height: 20,),
                     Row(
